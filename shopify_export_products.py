@@ -6,8 +6,8 @@ import logging
 import argparse
 from dotenv import load_dotenv
 
-def main():
 
+def main():
     load_dotenv()
 
     shop_url = os.getenv("SHOP_URL")
@@ -26,7 +26,6 @@ def main():
     logging.basicConfig(filename="example.log", encoding="utf-8", level=level_logging)
     stderr_handler = logging.StreamHandler(sys.stderr)
     stderr_handler.setLevel(level_logging)
-    logger = logging.getLogger()
     logger.addHandler(stderr_handler)
     logger = logging.getLogger()
 
@@ -47,8 +46,8 @@ def main():
             writer.writerow(product.attributes)
     logger.info("Ready! :3")
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     main()
 
 # TODO
