@@ -44,11 +44,6 @@ with open(output_filename, mode='w', newline='') as csv_file:
 logger.info('Ready! :3')
 
 # TODO 
-# 4h
-# USE logging library, print info messages by default, print timestamp & level in front of the message /dont change logger.info lines/
-# USE python-dotenv DONT COMMIT .env FILE!!!
-# --filename or -f for filename (argparse only if 38 line) (22 & 23 remove)
-# --level or -l /debug info warning/
 # functions "__name__" = "__main__"
 # black, pre-commit, flake8, from vankata
 # mypy  
