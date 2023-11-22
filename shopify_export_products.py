@@ -8,8 +8,6 @@ from dotenv import load_dotenv
 
 
 def main():
-    load_dotenv()
-
     shop_url = os.getenv("SHOP_URL")
     access_token = os.getenv("ACCESS_TOKEN")
     api_version = "2023-01"
@@ -26,8 +24,8 @@ def main():
     logging.basicConfig(filename="example.log", encoding="utf-8", level=level_logging)
     stderr_handler = logging.StreamHandler(sys.stderr)
     stderr_handler.setLevel(level_logging)
-    logger.addHandler(stderr_handler)
     logger = logging.getLogger()
+    logger.addHandler(stderr_handler) 
 
     logger.info("Creating shopify session...")
     session = shopify.Session(shop_url, api_version, access_token)
@@ -48,7 +46,11 @@ def main():
 
 
 if __name__ == "__main__":
+    load_dotenv()
     main()
 
 # TODO
+# print INFO and timestamp (same as example.log), argparse to validate argument level
+# load_dotenv() where to put settings of logger and argparser /not in main/
+# try from other file to run main()
 # mypy
